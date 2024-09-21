@@ -18,13 +18,13 @@ class Level:
         
     def create_map(self):
         layouts = {
-            'boundary': import_csv_layout('C:/Users/sujoy/Desktop/zelda/Zelda/map/map_FloorBlocks.csv'),
-            'grass': import_csv_layout('C:/Users/sujoy/Desktop/zelda/Zelda/map/map_Grass.csv'),
-            'object': import_csv_layout('Zelda/map/map_LargeObjects.csv')
+            'boundary': import_csv_layout('C:/Users/tarun/OneDrive/Desktop/Zelda/map/map_FloorBlocks.csv'),
+            'grass': import_csv_layout('C:/Users/tarun/OneDrive/Desktop/Zelda/map/map_Grass.csv'),
+            'object': import_csv_layout('C:/Users/tarun/OneDrive/Desktop/Zelda/map/map_LargeObjects.csv')
         }
         graphics = {
-            'grass': import_folder('C:/Users/sujoy/Desktop/zelda/Zelda/graphics/grass'),
-            'objects': import_folder('Zelda/graphics/objects')
+            'grass': import_folder('C:/Users/tarun/OneDrive/Desktop/Zelda/graphics/grass'),
+            'objects': import_folder('C:/Users/tarun/OneDrive/Desktop/Zelda/graphics/objects')
         }
         
         for style, layout in layouts.items():
@@ -49,7 +49,7 @@ class Level:
         # update and draw the game
         self.visible_sprites.custom_draw(self.player)
         self.visible_sprites.update()
-        
+        debug(self.player.status)
         
 class YSortCameraGroup(pygame.sprite.Group):
     def __init__(self):
@@ -62,7 +62,7 @@ class YSortCameraGroup(pygame.sprite.Group):
         self.offset = pygame.math.Vector2()
         
         # creating the floor
-        self.floor_surf = pygame.image.load('C:/Users/sujoy/Desktop/zelda/Zelda/graphics/tilemap/ground.png').convert()
+        self.floor_surf = pygame.image.load('C:/Users/tarun/OneDrive/Desktop/Zelda/graphics/tilemap/ground.png').convert()
         self.floor_rect = self.floor_surf.get_rect(topleft = (0,0))
         
     def custom_draw(self, player):
